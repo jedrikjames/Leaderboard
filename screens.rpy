@@ -118,14 +118,6 @@ screen say(who, what):
 
 ## Make the namebox available for styling through the Character object.
 init python:
-    def init_leaderboard():
-        global variables
-        try:
-            variables
-        except NameError:
-            variables = Variables()
-        variables.load_leaderboard()
-
     config.character_id_prefixes.append('namebox')
 
 style window is default
@@ -271,14 +263,6 @@ screen quick_menu():
 init python:
     config.overlay_screens.append("quick_menu")
 
-    def init_leaderboard():
-        global variables
-        try:
-            variables
-        except NameError:
-            variables = Variables()
-        variables.load_leaderboard()
-
 default quick_menu = True
 
 style quick_button is default
@@ -314,17 +298,15 @@ screen navigation():
 
             textbutton _("Start") action Start()
 
-            textbutton "View Leaderboard" action [Function(lambda: init_leaderboard()), Show("Leaderboard")]
-
         else:
 
             textbutton _("History") action ShowMenu("history")
 
             textbutton _("Save") action ShowMenu("save")
 
-            textbutton _("Load") action ShowMenu("load")
+        textbutton _("Load") action ShowMenu("load")
 
-            textbutton _("Preferences") action ShowMenu("preferences")
+        textbutton _("Preferences") action ShowMenu("preferences")
 
         if _in_replay:
 
