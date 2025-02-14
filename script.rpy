@@ -136,6 +136,12 @@ label scene_6:
         "3 heaping micro spatulas of copper (II) carbonate (CuCO3)":
             $ variables.points -= 1
             B "Haha! I see you got confused. Here's the right one."
+        "2 heaping micro spatulas of Copper (II) carbonate (CuCO4)":
+            $ variables.points -= 1
+            B "Haha! I see you got confused. Here's the right one."
+        "3 heaping micro spatulas of Copper (II) carbonate (CuCO2)":
+            $ variables.points -= 1
+            B "Haha! I see you got confused. Here's the right one."
     
     B "Now, let's heat it for 3 minutes. Do you have the test tube holder ready?"
     menu:
@@ -152,6 +158,12 @@ label scene_6:
             $ variables.points += 5
             B "Wow, you have good memory!"
         "2 minutes":
+            $ variables.points -= 1
+            B "Oh you got it wrong. Here look at the textbook again."
+        "20 seconds":
+            $ variables.points -= 1
+            B "Oh you got it wrong. Here look at the textbook again."
+        "1 minute":
             $ variables.points -= 1
             B "Oh you got it wrong. Here look at the textbook again."
     
